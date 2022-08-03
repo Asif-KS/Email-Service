@@ -7,6 +7,8 @@ import org.springframework.boot.context.event.ApplicationReadyEvent;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.event.EventListener;
 
+import javax.mail.MessagingException;
+
 @SpringBootApplication
 
 public class SpringEmailClientApplication {
@@ -16,10 +18,17 @@ public class SpringEmailClientApplication {
 		SpringApplication.run(SpringEmailClientApplication.class, args);
 	}
 	@EventListener(ApplicationReadyEvent.class)
-	public void triggerMail(){
-		service.sendSimpleEmail("faazns@gmail.com",
-				"ni aanoda fahad",
-				"checking mail");
+	public void triggerMail() throws MessagingException {
+		service.sendEmailWithAttachment("john.joshy@nintrivalabs.com",
+				"ni aahno poopatta gundaa",
+				"checking mail",
+				"C:\\Users\\ASIF SHAJAHAN\\OneDrive\\Pictures\\IMG_7034.JPG");
+//
+//
+//
+//		service.sendSimpleEmail("sreenath@nintrivalabs.com",
+//				"hello machaa",
+//				"checking mail");
 
 	}
 

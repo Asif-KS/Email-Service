@@ -12,12 +12,14 @@ public class TriggerMail {
     private EmailService service;
 
 
-    public void triggerMail(MailVo mailVo1) throws MessagingException {
+    public void triggerMail() throws MessagingException {
         MailVo mailVo = new MailVo();
         mailVo.setFromEmailId("asifshajahan@gmail.com");
-        mailVo.setToEmailId("asif.ks@nintrivalabs.gmail.com");
-        mailVo.setBody("reset your password");
+        mailVo.setToEmailId("asif.ks@nintrivalabs.com");
+        mailVo.setBody("https://youtu.be/mfN-EOkj13Q");
         mailVo.setSubject("testing mail service");
+
+
 
 
         service.sendSimpleEmail(mailVo);

@@ -10,11 +10,10 @@ import org.springframework.stereotype.Service;
 public class EmailService {
 
 
-
     @Autowired
     private JavaMailSender mailSender;
 
-    public void sendSimpleEmail (MailVo mailVo){
+    public void sendSimpleEmail(MailVo mailVo) {
         SimpleMailMessage message = new SimpleMailMessage();
         message.setFrom(mailVo.getFromEmailId());
         message.setTo(mailVo.getToEmailId());
@@ -24,6 +23,7 @@ public class EmailService {
         mailSender.send(message);
         System.out.println("mail send");
     }
+}
 //    public void sendEmailWithAttachment(String toEmail,
 //                                         String body,
 //                                         String subject,
@@ -42,5 +42,5 @@ public class EmailService {
 //        mailSender.send(mimeMessage);
 //        System.out.println("mail Send........");
 //    }
-
-}
+//
+//}

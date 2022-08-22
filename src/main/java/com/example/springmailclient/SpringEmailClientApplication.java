@@ -1,7 +1,6 @@
 package com.example.springmailclient;
 
 import com.example.springmailclient.util.TriggerMail;
-import com.example.springmailclient.vo.MailVo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -16,7 +15,6 @@ import javax.mail.MessagingException;
 public class  SpringEmailClientApplication {
 
 	@Autowired
-
 	private TriggerMail triggerMail;
 	public static void main(String[] args) {
 
@@ -25,8 +23,8 @@ public class  SpringEmailClientApplication {
 	}
 
 	@EventListener(ApplicationReadyEvent.class)
-	public void sendMail(MailVo mailVo) throws MessagingException{
-		triggerMail.triggerMail(mailVo);
+	public void sendMail() throws MessagingException{
+		triggerMail.triggerMail();
 	}
 
 

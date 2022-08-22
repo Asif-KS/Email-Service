@@ -8,6 +8,6 @@ public class MailVo {
     private  String fromEmailId;
     private String body;
     private  String subject;
-//    private String attachment;
     private String toEmailId;
+    //    private String attachment;;
 }
